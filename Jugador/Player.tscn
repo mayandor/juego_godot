@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Jugador/Player.gd" type="Script" id=1]
+[ext_resource path="res://sprites/juan3m.png" type="Texture" id=2]
+[ext_resource path="res://sprites/juan2m.png" type="Texture" id=3]
+[ext_resource path="res://sprites/juan4m.png" type="Texture" id=4]
+[ext_resource path="res://sprites/juan6m.png" type="Texture" id=5]
+[ext_resource path="res://sprites/juan1m.png" type="Texture" id=6]
+[ext_resource path="res://sprites/juan5m.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "caminando",
+"speed": 5.07
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "reposo",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 41.1297
+height = 115.45
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 389.081, 441.235 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -290.46, 125.862 )
+scale = Vector2( 0.655874, 0.701443 )
+frames = SubResource( 1 )
+animation = "reposo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -287.309, 129.367 )
+shape = SubResource( 2 )
