@@ -21,10 +21,10 @@ func _physics_process(delta):
 	
 	move_and_slide(posicion, Vector2(0,-1))
 	if posicion.x!=0:
-		$AnimatedSprite.animation="caminar"
+		$AnimatedSprite.animation="reposo"
 		$AnimatedSprite.flip_h=posicion.x<0
 	else:
-		$AnimatedSprite.animation="reposo" 
+		$AnimatedSprite.animation="caminar" 
 	
 	print(is_on_wall())
 	#print(is_on_floor())

@@ -9,9 +9,6 @@ extents = Vector2( 658.272, 16.4126 )
 [node name="suelo" type="StaticBody2D"]
 position = Vector2( -454.5, 177.321 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1084.15, 414.341 )
@@ -19,5 +16,5 @@ scale = Vector2( 1.2599, 0.650516 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1054.51, 393.907 )
+position = Vector2( 1058.75, 422.191 )
 shape = SubResource( 1 )

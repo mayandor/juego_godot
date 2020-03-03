@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Niveles/ParallaxLayer.gd" type="Script" id=1]
 [ext_resource path="res://sprites/montañaa.png" type="Texture" id=2]
 [ext_resource path="res://obstaculo/contenedorObstaculo.gd" type="Script" id=3]
 [ext_resource path="res://Niveles/tiempo_de _generacion.gd" type="Script" id=4]
 [ext_resource path="res://Suelo/suelo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Jugador/Player.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,7 +23,7 @@ texture = ExtResource( 2 )
 [node name="ContenedorSuelo" type="Node2D" parent="."]
 
 [node name="suelo" parent="ContenedorSuelo" instance=ExtResource( 5 )]
-position = Vector2( -452.361, 179.478 )
+position = Vector2( -464.361, 185.478 )
 
 [node name="suelo2" parent="ContenedorSuelo" instance=ExtResource( 5 )]
 position = Vector2( 745.972, 179.821 )
@@ -35,3 +36,8 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 script = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Player" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( 387.081, 367.235 )
