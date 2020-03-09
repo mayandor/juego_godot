@@ -3,7 +3,7 @@ extends Area2D
 onready var juancito = get_parent().get_node("Juancito")
 onready var main = get_node("/root/Main")
 var piso = position
-var velocidad = Vector2(-500, 0)
+var velocidad = Vector2(-300, 0)
 var tiempo_vida = 5
 
 
