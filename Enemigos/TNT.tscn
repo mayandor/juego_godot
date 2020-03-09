@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprites/enemigos/tnt.png" type="Texture" id=1]
+[ext_resource path="res://sprites/enemigos/EXPLOSION_ANIMATION.png" type="Texture" id=2]
+[ext_resource path="res://Enemigos/TNT.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "explosion",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "sin_explotar",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 23.9495, 36.0856 )
+
+[node name="tnt" type="Area2D"]
+position = Vector2( 1258, 532 )
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -7.9107, 3.17073 )
+scale = Vector2( 0.227838, 0.263711 )
+frames = SubResource( 7 )
+animation = "sin_explotar"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8.84924, -2.82837 )
+shape = SubResource( 8 )
+[connection signal="area_entered" from="." to="." method="_on_tnt_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_tnt_area_exited"]

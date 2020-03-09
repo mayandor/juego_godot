@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/montaña.png" type="Texture" id=1]
+[ext_resource path="res://Selectores/selectorPlane.gd" type="Script" id=2]
+[ext_resource path="res://sprites/SelectorPlane/plane1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/bg.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="bg" type="Sprite" parent="."]
+modulate = Color( 0.513726, 0.47451, 0.47451, 1 )
+position = Vector2( 562.953, 353.554 )
+scale = Vector2( 0.979603, 0.861867 )
+texture = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 472.0
+margin_top = 208.0
+margin_right = 622.0
+margin_bottom = 358.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectorPlane" type="NinePatchRect" parent="HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+
+[node name="imagen" type="NinePatchRect" parent="HBoxContainer/selectorPlane"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -136.0
+margin_right = 109.0
+margin_bottom = 133.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nombre" type="Label" parent="HBoxContainer/selectorPlane"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.9142
+margin_top = 15.5564
+margin_right = 30.0858
+margin_bottom = 29.5564
+text = "Personaje"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="iz" type="Button" parent="HBoxContainer/selectorPlane"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+margin_right = 23.0
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="der" type="Button" parent="HBoxContainer/selectorPlane"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -20.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="HBoxContainer/selectorPlane/iz" to="HBoxContainer/selectorPlane" method="_on_iz_pressed"]
+[connection signal="pressed" from="HBoxContainer/selectorPlane/der" to="HBoxContainer/selectorPlane" method="_on_der_pressed"]

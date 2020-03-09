@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemigos/bala.gd" type="Script" id=1]
+[ext_resource path="res://sprites/enemigos/bullet3.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.7693, 13.635 )
+
+[node name="Bala" type="Area2D"]
+position = Vector2( 142.836, -106.066 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1088.36, 598.545 )
+scale = Vector2( 0.173471, 0.122165 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1087.83, 598.708 )
+shape = SubResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Bala_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Bala_area_exited"]

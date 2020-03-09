@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Juego"
-run/main_scene="res://Jugador/Player.tscn"
+run/main_scene="res://Jugador/Juancito.tscn"
 config/icon="res://icon.png"
 
 [display]
